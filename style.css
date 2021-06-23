@@ -1,1 +1,37 @@
 /* Write your CSS Here. */
+
+
+
+form {
+  box-sizing: border-box;
+  display: flex;
+flex-direction: column;
+
+  width: fit-content;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+#textarea {
+  min-width: 150px;
+  margin-top: 10px;
+}
+label{
+  background-color: lightblue;
+  font-size: large;
+}
+
+.button{
+  background-color: lightblue;
+}
+.para{
+  background-color: lightblue;
+  width: fit-content;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+
+}
