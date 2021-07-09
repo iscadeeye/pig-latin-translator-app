@@ -3,12 +3,11 @@
 
 
 form {
+  background-color: skyblue;
   box-sizing: border-box;
   display: flex;
-flex-direction: column;
-
-  width: fit-content;
-
+  flex-direction: column;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -17,21 +16,48 @@ flex-direction: column;
 #textarea {
   min-width: 150px;
   margin-top: 10px;
-}
-label{
-  background-color: lightblue;
-  font-size: large;
+  background-color: floralwhite;
+
 }
 
-.button{
-  background-color: lightblue;
+label {
+  height: 18px;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+
 }
-.para{
-  background-color: lightblue;
-  width: fit-content;
-  height: 25px;
+
+.button {
+  margin: 0 auto;
+  width: 200px;
+  background-color: skyblue;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px 3px rgb(209, 212, 16);
+  padding: 6px;
+}
+
+.para {
+  background-color: skyblue;
+  width:fit-content;
   margin-left: auto;
   margin-right: auto;
   font-size: large;
+  margin-bottom: 10px; 
+ }
 
+.resetButton {
+  background-color: skyblue;
+  font-size: 1.5rem;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px 3px rgb(209, 212, 16);
+  padding: 6px;
 }

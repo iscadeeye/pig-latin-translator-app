@@ -12,21 +12,21 @@
         "omelet" becomes "omelet-yay" 
 */
 
-let vowelArray = ['a', 'e', 'i', 'o', 'u'];
+let vowelArray = ['a', 'e', 'i', 'o', 'u']
 function encodeVowelWord(word) {
 	for (let index = 0; index < vowelArray.length; index += 1) {
-		let current = vowelArray[index];
+		let current = vowelArray[index]
 		if (word[0] === current) {
-			word += '-yay';
+			word += '-yay'
 		}
 	}
-	return word;
+	return word
 }
 // WrJte your unJt tests here
-console.assert(encodeVowelWord('ears') == 'ears-yay');
-console.assert(encodeVowelWord('english') == 'english-yay');
-console.assert(encodeVowelWord('ate') == 'ate-yay');
-console.assert(encodeVowelWord('eat') === 'eat-yay');
+console.assert(encodeVowelWord('ears') == 'ears-yay')
+console.assert(encodeVowelWord('english') == 'english-yay')
+console.assert(encodeVowelWord('ate') == 'ate-yay')
+console.assert(encodeVowelWord('eat') === 'eat-yay')
 
 /*  --------------------------------------------------------
     encodeConsonantWord()
@@ -41,21 +41,21 @@ console.assert(encodeVowelWord('eat') === 'eat-yay');
 */
 
 function encodeConsonantWord(word) {
-	firstV = word.match(/[aeiouAEOU]/);
-	let indexOfVowel = word.indexOf(firstV);
-	remainingLetter = word.slice(indexOfVowel);
-	let choppedLetters = word.slice(0, indexOfVowel);
-	let combined = `${remainingLetter}-${choppedLetters}ay`;
-	return combined;
+	firstV = word.match(/[aeiouAEOU]/)
+	let indexOfVowel = word.indexOf(firstV)
+	remainingLetter = word.slice(indexOfVowel)
+	let choppedLetters = word.slice(0, indexOfVowel)
+	let combined = `${remainingLetter}-${choppedLetters}ay`
+	return combined
 }
 
 // Write your unit tests here
-console.assert(encodeConsonantWord('latin') === 'atin-lay');
-console.assert(encodeConsonantWord('Banana') === 'anana-Bay');
-console.assert(encodeConsonantWord('cheers') === 'eers-chay');
-console.assert(encodeConsonantWord('change') === 'ange-chay');
-console.assert(encodeConsonantWord('string') === 'ing-stray');
-console.assert(encodeConsonantWord('glove') === 'ove-glay');
+console.assert(encodeConsonantWord('latin') === 'atin-lay')
+console.assert(encodeConsonantWord('Banana') === 'anana-Bay')
+console.assert(encodeConsonantWord('cheers') === 'eers-chay')
+console.assert(encodeConsonantWord('change') === 'ange-chay')
+console.assert(encodeConsonantWord('string') === 'ing-stray')
+console.assert(encodeConsonantWord('glove') === 'ove-glay')
 /*  --------------------------------------------------------
     encodeWord()
 
@@ -71,19 +71,20 @@ console.assert(encodeConsonantWord('glove') === 'ove-glay');
 */
 function encodeWord(word) {
 	if (!word.startsWith(vowelArray)) {
-		let result = encodeConsonantWord(word);
-		return result;
+		let result = encodeConsonantWord(word)
+		return result
 	} else {
-		result = encodeVowelWord(word);
-		return result;
+		result = encodeVowelWord(word)
+		return result
 	}
 }
 
 // Write your unit tests here
 
-console.assert(encodeWord('man') === 'an-may');
-console.assert(encodeWord('cheers') === 'eers-chay');
-console.assert(encodeWord('easy') === 'easy-ay');
+console.assert(encodeWord('man') === 'an-may')
+console.assert(encodeWord('cheers') === 'eers-chay')
+console.assert(encodeWord('easy') === 'easy-ay')
+console.assert(encodeWord("who")=== "o-whay")
 
 /*  --------------------------------------------------------
     encodeText()    
@@ -92,53 +93,60 @@ console.assert(encodeWord('easy') === 'easy-ay');
 */
 
 function encodeText(text) {
-	let latin;
-	let latinSentence;
+	let latin
+	let latinSentence
 
-	let array = text.split(' ');
+	let array = text.split(' ')
 	for (let i = 0; i < array.length; i += 1) {
-		currentWord = array[i];
-		let result = encodeWord(currentWord);
+		currentWord = array[i]
+		let result = encodeWord(currentWord)
 
-		latin += ` ${result}`;
+		latin += ` ${result}`
 
-		let turnToArray = latin.split(' ');
-		turnToArray.shift();
-		latinSentence = turnToArray.join(' ');
+		let turnToArray = latin.split(' ')
+		turnToArray.shift()
+		latinSentence = turnToArray.join(' ')
 	}
-	return latinSentence;
+	return latinSentence
 }
 
 // Write your unit tests here
 console.assert(encodeText('who are you') === 'o-whay are-ay ou-yay', {
 	expected: 'o-whay are-ay ou-yay',
 	result: encodeText('who are you'),
-});
+})
 
 console.assert(encodeText('kenzie academy is the best') === 'enzie-kay academy-ay is-ay e-thay est-bay', {
 	expected: 'enzie-kay academy-ay is-ay e-thay est-bay',
 	result: encodeText('kenzie academy is the best'),
-});
+})
 
 //grab elements
-let text = document.getElementById('textarea');
-let button = document.querySelector('button');
-let div = document.querySelector('para');
+let text = document.getElementById('textarea')
+let button = document.querySelector('button')
 
 //button for event.
-button.addEventListener('click', renderFunction);
-
+button.addEventListener('click', renderFunction)
 //put on the page
 function renderFunction(event) {
-	event.preventDefault();
-	let paragraph = document.createElement('p');
-	let value = text.value;
-	paragraph.classList.add('para');
-
-	if (value.length !== 0) {
-		let result = encodeText(value);
-		paragraph.innerText = result;
-		document.body.append(paragraph);
-		text.value = '';
+	if(event !== undefined){
+		event.preventDefault()
 	}
+	let paragraph = document.createElement('p')
+	textToBeErase = paragraph
+	paragraph.classList.add('para')
+	let value = text.value
+	if (value.length !== 0) {
+		let result = encodeText(value)
+		paragraph.innerText = result
+		document.body.append(paragraph)
+		text.value = ''
+	}
+	return paragraph
 }
+//erase the the translation.
+let resetButton = document.querySelector('.resetButton')
+function eraseFunction (event){
+	event.preventDefault()
+}
+resetButton.addEventListener('click', eraseFunction)
