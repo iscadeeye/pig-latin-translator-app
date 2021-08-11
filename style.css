@@ -1,56 +1,71 @@
 /* Write your CSS Here. */
 
-
+body {
+  background-color: #333;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 form {
   background-color: skyblue;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  width: 550px;
+  height: 400px;
+  padding: 10px;
+  margin: 0 auto;
   margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: -1px 0 0 3px rgb(94, 89, 80);
 }
 
 #textarea {
-  min-width: 150px;
+  height: 100px;
+  max-width: 500px;
   margin-top: 10px;
   background-color: floralwhite;
-
+  width: 500px;
+  font-family: Tahoma, sans-serif;
 }
 
 label {
   height: 18px;
-  font-size: large;
+  font-size: 20px;
   display: flex;
   justify-content: center;
-
+  align-items: center;
 }
 
 .button {
+  cursor: pointer;
   margin: 0 auto;
   width: 200px;
-  background-color: skyblue;
+  background-color: #fefe;
   font-size: 1.5rem;
   margin-bottom: 15px;
   margin-top: 15px;
   border-radius: 12px;
-  box-shadow: 1px 1px 1px 3px rgb(209, 212, 16);
-  padding: 6px;
+  box-shadow: 1px 1px 1px 3px rgba(75, 75, 70, 0.75);
+  padding: 5px;
 }
 
 .para {
-  background-color: skyblue;
-  width:fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
   font-size: large;
-  margin-bottom: 10px; 
- }
+  padding: 10px;
+
+  border-radius: 5px;
+  
+  line-height: 100%;
+}
 
 .resetButton {
-  background-color: skyblue;
+  background-color: #fefe;
   font-size: 1.5rem;
   width: 200px;
   margin: 0 auto;
@@ -58,6 +73,16 @@ label {
   display: flex;
   justify-content: center;
   border-radius: 12px;
-  box-shadow: 1px 1px 1px 3px rgb(209, 212, 16);
-  padding: 6px;
+  box-shadow: 1px 1px 1px 3px rgba(75, 75, 70, 0.75);
+  padding: 5px;
+  cursor: pointer;
+
+}
+
+.resetButton:focus {
+  transform: scale(1);
+}
+
+.button:focus {
+  transform: scale(1);
 }
